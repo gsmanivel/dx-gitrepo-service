@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: dx-gitrepo-service
+
+github:
+  token: ${GITHUB_TOKEN}
+  org: ${GITHUB_ORG}
+  api-url: https://api.github.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.dx.gitrepo: DEBUG
+    org.springframework.web: INFO
